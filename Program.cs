@@ -172,26 +172,9 @@ namespace ChapOneAlgorithms
 
         private static int GreatestCommonDivisor(int[] numbers)
         {
-            //Using Euclidian Algorithm
-            //L = (S x q) + r
-            /*
-             * q = Large number divide by small number to get q
-             * r = Modulus of L%S to get r
-             * 
-             * Steps to Algorithm:
-             * 1. First find smallest number using the smallest number algorithm
-             * 2. Find q and r
-             * 3. Compute Euclidian Algorithm to find GCD
-             * 
-             * METHOD 2 - WIKIPEDIA
-             * Find smaller number 
-             * Find modulus of large % small number
-             * if modulus <> 0 then follow again
-             * b % remainder
-             * repeat until modulus == 0
-             * when modulus == 0 
-             * gcf == remainder from previous compute
-             * 
+            //Using Euclidean Algorithm
+            
+             /* 
              * WORKING METHOD
              * Compute large number
              * Find initial modulus - large % small = result
@@ -201,7 +184,24 @@ namespace ChapOneAlgorithms
              * Large number to small number and small number to result
              * Compute quotient
              * 
-             *
+             * WORKED OUT EXAMPLE
+             * 1071 % 462 = 147
+             * a % b = r0
+             * 1071 - 147 / 462 = 2
+             * (a - r) / b = q0
+             * 
+             * [LOOP CHAIN]
+             * update a and b
+             * 462 % 147 = 21
+             * a % b = r
+             * 462 - 21 / 147 = 3
+             * (a - r) / b = q
+             * 
+             * again update a and b
+             * 147 % 21 = 0
+             * a % b = r
+             * 147 - 0 / 21 = 7
+             * (a - r) / b = q
              */
 
             int a = numbers[0];
@@ -251,5 +251,25 @@ namespace ChapOneAlgorithms
 
             return quotient;
         }
-    }
+
+        //L = (S x q) + r
+        /*
+         * q = Large number divide by small number to get q
+         * r = Modulus of L%S to get r
+         * 
+         * Steps to Algorithm:
+         * 1. First find smallest number using the smallest number algorithm
+         * 2. Find q and r
+         * 3. Compute Euclidian Algorithm to find GCD
+         * 
+         * METHOD 2 - WIKIPEDIA
+         * Find smaller number 
+         * Find modulus of large % small number
+         * if modulus <> 0 then follow again
+         * b % remainder
+         * repeat until modulus == 0
+         * when modulus == 0 
+         * gcf == remainder from previous compute
+         * /
+}
 }
