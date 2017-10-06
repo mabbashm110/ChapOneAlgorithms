@@ -82,5 +82,6 @@
 -r:"C:\Users\User\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\User\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\User\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
+"D:\VSTS\ALG\ChapOneAlgorithms\src\ChapOneAlgorithms\Algorithms.cs"
 "D:\VSTS\ALG\ChapOneAlgorithms\src\ChapOneAlgorithms\Program.cs"
 "D:\VSTS\ALG\ChapOneAlgorithms\src\ChapOneAlgorithms\Properties\AssemblyInfo.cs"
