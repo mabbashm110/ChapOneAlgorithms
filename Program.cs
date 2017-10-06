@@ -17,7 +17,7 @@ namespace ChapOneAlgorithms
 
         private static void RunCommand()
         {
-            Console.WriteLine("Pick an option: \n1. Small Numbers Algorithm \n2.Greatest Common Divisor \n3.Exit");
+            Console.WriteLine("Pick an option: \n1. Small Numbers Algorithm \n2. Greatest Common Divisor \n3. Exit");
             string option = Console.ReadLine();
             RunAlgorithmSelection(option);
         }
@@ -191,10 +191,22 @@ namespace ChapOneAlgorithms
              * repeat until modulus == 0
              * when modulus == 0 
              * gcf == remainder from previous compute
+             * 
+             * WORKING METHOD
+             * Compute large number
+             * Find initial modulus - large % small = result
+             * Find initial quotient - (large - result)/small
+             * [Loop] through the chain
+             * Update large and small in every loop
+             * Large number to small number and small number to result
+             * Compute quotient
+             * 
+             *
              */
 
             int a = numbers[0];
             int b = numbers[1];
+
             int largeNumber = 0;
             int smallNumber = 0;
 
@@ -212,25 +224,32 @@ namespace ChapOneAlgorithms
 
             //Do the math
             var result = largeNumber % smallNumber;
-            //var quotient = (largeNumber - result) / smallNumber;
+            var quotient = (largeNumber - result) / smallNumber;
             do
             {
-                result = smallNumber % result;
+                largeNumber = smallNumber;
+                smallNumber = result;
+                if (largeNumber != 0|| smallNumber != 0)
+                {
+                    result = largeNumber % smallNumber;
+                    quotient = (largeNumber - result) / smallNumber;
+                }
+                else
+                {
+                    break;
+                }
+                //var result = smallNumber % result;
+                //quotient = (smallNumber - result) / resultZero;
                 //smallNumber = result;
             }
             while (result != 0);
 
             if (result == 0)
             {
-                return smallNumber;
+                return quotient;
             }
 
-            return smallNumber;
-        }
-
-        private static void getGCDResult(int[] numbers, int smallNumber)
-        {
-
+            return quotient;
         }
     }
 }
