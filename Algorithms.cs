@@ -204,5 +204,10 @@ namespace ChapOneAlgorithms
 
             return quotient;
         }
+
+        public static double FindSqrtSimple(double number)
+        {
+            return Math.Sqrt(number);
+        }
     }
 }
