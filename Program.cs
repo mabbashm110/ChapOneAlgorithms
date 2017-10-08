@@ -17,7 +17,7 @@ namespace ChapOneAlgorithms
 
         private static void RunCommand()
         {
-            Console.WriteLine("Pick an option: \n1. Small Numbers Algorithm \n2. Greatest Common Divisor \n3. Exit");
+            Console.WriteLine("Pick an option: \n1. Small Numbers Algorithm \n2. Greatest Common Divisor \n3. Square Root \n9. Exit");
             string option = Console.ReadLine();
             RunAlgorithmSelection(option);
         }
@@ -31,7 +31,7 @@ namespace ChapOneAlgorithms
             {
                 RunCommand();
             }
-            else if (option == "3")
+            else if (option == "9")
             {
                 Environment.Exit(0);
             }
@@ -60,6 +60,11 @@ namespace ChapOneAlgorithms
                     Console.WriteLine("GCF is: {0}\n", result);
                 }
 
+            }
+            else if (option == "3")
+            {
+                string response = "";
+                double sqrtOfNumber = Algorithms.FindSqrtSimple(double.Parse(numbersArray[0]), response);
             }
             //Console.WriteLine("The smallest number is: {0}", smallestNumber);
             //numbersArray = Array.Empty<int>();
