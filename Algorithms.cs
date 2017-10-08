@@ -211,6 +211,23 @@ namespace ChapOneAlgorithms
             return reply;
         }
 
+        public static string FindElementInArray(int[] numbers, int numberToSearch)
+        {
+            string message = "";
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] == numberToSearch)
+                {
+                    return message = ("Element exists in the array, at position " + i.ToString());
+                    
+                }
+                else if (numbers[i] != numberToSearch)
+                {
+                    return message = "Element does not exist in the array";
+                }
+            }
+            return message;
+        }
     }
 }
 
