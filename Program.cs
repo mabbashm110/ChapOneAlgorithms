@@ -17,7 +17,7 @@ namespace ChapOneAlgorithms
 
         private static void RunCommand()
         {
-            Console.WriteLine("Pick an option: \n1. Small Numbers Algorithm \n2. Greatest Common Divisor \n3. Square Root \n9. Exit");
+            Console.WriteLine("Pick an option: \n1. Small Numbers Algorithm \n2. Greatest Common Divisor \n3. Simple Square Root \n9. Exit");
             string option = Console.ReadLine();
             RunAlgorithmSelection(option);
         }
@@ -63,8 +63,8 @@ namespace ChapOneAlgorithms
             }
             else if (option == "3")
             {
-                string response = "";
-                double sqrtOfNumber = Algorithms.FindSqrtSimple(double.Parse(numbersArray[0]), response);
+                string response = Algorithms.FindSqrtSimple(numbersArray[0]);
+                Console.WriteLine("Square root is {0}\n", response);
             }
             //Console.WriteLine("The smallest number is: {0}", smallestNumber);
             //numbersArray = Array.Empty<int>();

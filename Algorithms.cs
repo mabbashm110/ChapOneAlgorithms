@@ -205,20 +205,12 @@ namespace ChapOneAlgorithms
             return quotient;
         }
 
-        public static double FindSqrtSimple(double[] numberArray, out string message)
+        public static string FindSqrtSimple(double number)
         {
-            if (numberArray.Length >=2 || numberArray.Length != 0)
-            {
-                message = "You cannot find square roots of multiple numbers";
-                return 0;
-            }
-            else
-            {
-                message = "Success";
-                return Math.Sqrt(numberArray[0]);
-            }
-
-            return 0;
+            string reply = Math.Sqrt(number).ToString();
+            return reply;
         }
+
     }
 }
+
