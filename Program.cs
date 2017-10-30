@@ -18,7 +18,7 @@ namespace ChapOneAlgorithms
         private static void RunCommand()
         {
             Console.WriteLine("Pick an option: \n1. Small Numbers Algorithm \n2. Greatest Common Divisor \n3. Simple Square Root" + 
-                "\n4. Find element in Array \n5. Bubble Sort Algorithm" +
+                "\n4. Find element in Array \n5. Bubble Sort Algorithm \n6. Insertion Sort Algorithm" +
                 "\n9. Exit");
             string option = Console.ReadLine();
             RunAlgorithmSelection(option);
@@ -80,6 +80,12 @@ namespace ChapOneAlgorithms
             else if (option == "5")
             {
                 int[] organisedArray = Algorithms.BubbleSortAlg(numbersArray);
+                Console.WriteLine(organisedArray.ToString());
+            }
+
+            else if (option == "6")
+            {
+                int[] organisedArray = Algorithms.InsertionSortAlg(numbersArray);
                 Console.WriteLine(organisedArray.ToString());
             }
             //Console.WriteLine("The smallest number is: {0}", smallestNumber);

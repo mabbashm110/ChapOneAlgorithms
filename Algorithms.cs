@@ -266,6 +266,39 @@ namespace ChapOneAlgorithms
             } while (swapped == true);
             return numbers;
         }
+
+        public static int[] InsertionSortAlg(int[] numbers)
+        {
+            /* Pseudocode
+             * Compare 2nd number to first
+             * Swap accordingly
+             * Compare 3rd number to second
+             * Swap accordingly
+             * if smaller found, continue to check with previous numbers and then swap it
+             * 
+             * loop 1 swaps forward
+             * loop 2 swaps backward
+            */
+            int newValue;
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                newValue = numbers[i];
+                int j = i;
+                while (j > 0 && numbers[j-1] > newValue)
+                {
+                    numbers[j] = numbers[j - 1];
+                    j--;
+                }
+                numbers[j] = newValue;
+            }
+            foreach (int val in numbers)
+            {
+                Console.Write(val + ",");
+            }
+            Console.WriteLine();
+
+            return numbers;
+        }
     }
 }
 
