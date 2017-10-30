@@ -18,7 +18,7 @@ namespace ChapOneAlgorithms
         private static void RunCommand()
         {
             Console.WriteLine("Pick an option: \n1. Small Numbers Algorithm \n2. Greatest Common Divisor \n3. Simple Square Root" + 
-                "\n4. Find element in Array" +
+                "\n4. Find element in Array \n5. Bubble Sort Algorithm" +
                 "\n9. Exit");
             string option = Console.ReadLine();
             RunAlgorithmSelection(option);
@@ -76,6 +76,12 @@ namespace ChapOneAlgorithms
                 string response = Algorithms.FindElementInArray(numbersArray, numberToSearch);
                 Console.WriteLine(response);
             }
+
+            else if (option == "5")
+            {
+                int[] organisedArray = Algorithms.BubbleSortAlg(numbersArray);
+                Console.WriteLine(organisedArray.ToString());
+            }
             //Console.WriteLine("The smallest number is: {0}", smallestNumber);
             //numbersArray = Array.Empty<int>();
             //Console.ReadKey();
@@ -106,6 +112,14 @@ namespace ChapOneAlgorithms
             return numbersArray;
         }
        
+        public void DefineCar(Car car)
+        {
+            car = new Car
+            {
+                Model = "Ford",
+                TypeOfCar = Car.CarType.FourWheel
+            };
 
+        }
     }
 }

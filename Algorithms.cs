@@ -213,6 +213,11 @@ namespace ChapOneAlgorithms
 
         public static string FindElementInArray(int[] numbers, int numberToSearch)
         {
+            /*
+             * Issue with algorithm
+             * Upon debug loops through the statement
+             * But upon run does not 
+             */
             string message = "";
             for (int i = 0; i < numbers.Length; i++)
             {
@@ -227,6 +232,39 @@ namespace ChapOneAlgorithms
                 }
             }
             return message;
+        }
+
+        public static int[] BubbleSortAlg(int[] numbers)
+        {
+            bool swapped;
+            //int[] organisedNumbers = new int[numbers.Length];
+            do
+            {
+                swapped = false;
+                for (int i = 0; i < numbers.Length - 1; i++)
+                {
+                    if (numbers[i] > numbers[i + 1])
+                    {
+                        int temp = numbers[i + 1];
+                        //Console.WriteLine(temp);
+                        numbers[i + 1] = numbers[i];
+                        //Console.WriteLine(numbers[i + 1]);
+                        numbers[i] = temp;
+                        //Console.WriteLine(numbers[i]);
+                        //Console.WriteLine(i);
+                        swapped = true;
+
+                    }
+
+                } 
+                //else
+                //{
+                //    int temp = numbers[i];
+                //    numbers[i] = numbers[i + 1];
+                //    numbers[i] = temp;
+                //}
+            } while (swapped == true);
+            return numbers;
         }
     }
 }
