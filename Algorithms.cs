@@ -299,6 +299,38 @@ namespace ChapOneAlgorithms
 
             return numbers;
         }
+
+        public static void InsertionSort2()
+        {
+            int[] numbers = { 9, 2, 8, 7, 6 };
+            int upgrade;
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                if (numbers[i + 1] < numbers[i])
+                {
+                    upgrade = numbers[i];
+                    numbers[i + 1] = numbers[i];
+                    numbers[i + 1] = upgrade;
+
+                    for (int j = i; j < 0; j--)
+                    {
+
+                    }
+                }
+            }
+        }
+
+        public static int[] loopInsertion(int[] numbers, int i)
+        {
+            int upgrade;
+            if (numbers[i + 1] < numbers[i])
+            {
+                upgrade = numbers[i];
+                numbers[i + 1] = numbers[i];
+                numbers[i + 1] = upgrade;
+            }
+            return numbers;
+        }
     }
 }
 
