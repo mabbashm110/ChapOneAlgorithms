@@ -224,7 +224,7 @@ namespace ChapOneAlgorithms
                 if (numbers[i] == numberToSearch)
                 {
                     return message = ("Element exists in the array, at position " + i.ToString());
-                    
+
                 }
                 else if (numbers[i] != numberToSearch)
                 {
@@ -256,7 +256,7 @@ namespace ChapOneAlgorithms
 
                     }
 
-                } 
+                }
                 //else
                 //{
                 //    int temp = numbers[i];
@@ -284,7 +284,7 @@ namespace ChapOneAlgorithms
             {
                 newValue = numbers[i];
                 int j = i;
-                while (j > 0 && numbers[j-1] > newValue)
+                while (j > 0 && numbers[j - 1] > newValue)
                 {
                     numbers[j] = numbers[j - 1];
                     j--;
@@ -329,6 +329,48 @@ namespace ChapOneAlgorithms
                 numbers[i + 1] = numbers[i];
                 numbers[i + 1] = upgrade;
             }
+            return numbers;
+        }
+
+        public static int[] SelectionSortAlg(int[] numbers)
+        {
+            /*
+             * Take position 0, compare with others in the array
+             * If position 0 larger than (next) position in the array
+             * Store (next) position in a variable
+             * Continue checking positions with variable
+             * If variable is small in the whole array
+             * Switch position with position 0
+             * 
+             * Loop next i++
+             * follow pattern
+             * When reached length - 1
+             * Stop
+             * return numbers
+             */
+            bool swapped;
+            int tempValue;
+            int j = 1;
+            do
+            {
+                swapped = false;
+                for (int i = 0; i < numbers.Length - 1; i++)
+                {
+                    if (numbers[i] > numbers[i + 1])
+                    {
+                        tempValue = numbers[i + 1];
+                        
+                        while (j == numbers.Length - 1 && numbers[j] > tempValue)
+                        {
+                            numbers[i + 1] = numbers[i];
+                            numbers[i] = tempValue;
+                            swapped = true;
+                            j++;
+                        }
+                    }
+                }
+            } while (swapped == true);
+
             return numbers;
         }
     }
