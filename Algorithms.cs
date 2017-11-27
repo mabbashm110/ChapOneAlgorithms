@@ -145,6 +145,10 @@ namespace ChapOneAlgorithms
                     * 1. First find smallest number using the smallest number algorithm
                     * 2. Find q and r
                     * 3. Compute Euclidian Algorithm to find GCD
+                    * //NETFLIX ALGORITHMS
+                    * Euclid's algorithm suggests that if there is a rectangle with 150 X 345, take the square of the smallest ie 150 X 150
+                    * Now add it to the rectangle, repeat again. Then when you are left with the smaller space - repeat step 2 again, until it is complete
+                    * The smallest square will be the GCD for the 2 numbers
                     * 
                     * METHOD 2 - WIKIPEDIA
                     * Find smaller number 
